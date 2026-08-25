@@ -362,14 +362,55 @@ html {
   font-weight: 600;
   margin-bottom: 28px;
   color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.role-prefix {
+  color: var(--text-secondary);
+}
+
+/* RGB Lighting Animations */
+@keyframes rgbFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes rgbShadowGlow {
+  0% { filter: drop-shadow(0 0 6px rgba(255, 0, 85, 0.6)) drop-shadow(0 0 14px rgba(255, 0, 85, 0.3)); }
+  20% { filter: drop-shadow(0 0 6px rgba(255, 136, 0, 0.6)) drop-shadow(0 0 14px rgba(255, 136, 0, 0.3)); }
+  40% { filter: drop-shadow(0 0 6px rgba(0, 255, 102, 0.6)) drop-shadow(0 0 14px rgba(0, 255, 102, 0.3)); }
+  60% { filter: drop-shadow(0 0 6px rgba(0, 229, 255, 0.6)) drop-shadow(0 0 14px rgba(0, 229, 255, 0.3)); }
+  80% { filter: drop-shadow(0 0 6px rgba(170, 0, 255, 0.6)) drop-shadow(0 0 14px rgba(170, 0, 255, 0.3)); }
+  100% { filter: drop-shadow(0 0 6px rgba(255, 0, 85, 0.6)) drop-shadow(0 0 14px rgba(255, 0, 85, 0.3)); }
+}
+
+.rgb-text {
+  background: linear-gradient(
+    90deg,
+    #ff0055,
+    #ff7700,
+    #ffea00,
+    #00ff66,
+    #00e5ff,
+    #9900ff,
+    #ff0055
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rgbFlow 5s ease infinite, rgbShadowGlow 5s linear infinite;
+  display: inline-block;
 }
 
 .typing-text {
-  color: #ffffff;
   font-family: var(--font-mono);
-  border-right: 2px solid #ffffff;
+  border-right: 3px solid #00e5ff;
   padding-right: 4px;
-  animation: blink 0.8s infinite;
+  animation: blink 0.8s infinite, rgbFlow 5s ease infinite, rgbShadowGlow 5s linear infinite;
 }
 
 @keyframes blink {

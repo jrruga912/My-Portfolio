@@ -47,10 +47,10 @@ export function Skills() {
             <span className="skill-badge highlight">React.js</span>
             <span className="skill-badge highlight">Vite</span>
             <span className="skill-badge highlight">MySQL</span>
+            <span className="skill-badge highlight">phpMyAdmin</span>
             <span className="skill-badge">HTML5 / CSS3</span>
             <span className="skill-badge">Git & GitHub</span>
             <span className="skill-badge">REST APIs</span>
-            <span className="skill-badge">EmailJS Integration</span>
           </div>
         </div>
       </div>

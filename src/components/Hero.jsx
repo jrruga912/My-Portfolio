@@ -1,7 +1,7 @@
 export function Hero({ roleText }) {
   const marqueeSkills = [
     'C#', 'JavaScript', 'Unity', 'Godot', 'GDevelop', 'RPG Maker MZ', 
-    'React', 'Vite', 'Python', 'GDScript', 'MySQL', 'VB.NET', 
+    'React', 'Vite', 'Python', 'GDScript', 'MySQL', 'phpMyAdmin', 'VB.NET', 
     'HTML5', 'CSS3', 'Git', 'C', 'C++'
   ]
 
@@ -14,8 +14,8 @@ export function Hero({ roleText }) {
         </div>
         <h1>JOHN ROMAN RUGA</h1>
         <div className="role-container">
-          <span className="role-prefix">I build </span>
-          <span className="typing-text">{roleText}</span>
+          <span className="role-prefix">I build&nbsp;</span>
+          <span className="typing-text rgb-text">{roleText}</span>
         </div>
 
         <p className="hero-bio">

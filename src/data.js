@@ -20,7 +20,7 @@ export const projectsData = [
     fullDesc: "Budget Life is an immersive 2D financial tracking simulation game engineered to teach financial literacy. Built as a Capstone Project, it features complex state management for real-time bank accounts, dynamic loan interest calculations, employment mechanics, randomized economic events, and interactive minigames.",
     tech: ["C#", "JavaScript", "RPG Maker MZ", "HTML5", "Game Design"],
     image: "/budgetlayp.PNG",
-    gallery: ["/budgetlayp.PNG", "/bankk.PNG", "/earn.PNG", "/casino.PNG", "/historry.PNG"],
+    gallery: ["/budgetlayp.PNG", "/time.PNG", "/earn.PNG", "/store.PNG", "/school.PNG", "/bankk.PNG", "/advise.PNG", "/kufe.PNG", "/casino.PNG"],
     detailsUrl: "./budget-life.html"
   },
   {
@@ -33,7 +33,7 @@ export const projectsData = [
     fullDesc: "Tales of Destiny is an intense 2D action survival game heavily inspired by Vampire Survivors. Designed and implemented with GDevelop and JavaScript, it features custom particle effects, automated enemy wave scaling, projectile collision physics, loot drops, player attribute progression, and custom sound design.",
     tech: ["JavaScript", "GDevelop", "Pixel Art", "2D Physics", "Audio Synthesis"],
     image: "/tales1.PNG",
-    gallery: ["/tales1.PNG", "/tales2.PNG", "/tales3.PNG", "/tales4.png", "/tales5.PNG"],
+    gallery: ["/tales1.PNG", "/tales2.PNG", "/tales3.PNG", "/tales4.png", "/tales44.PNG", "/tales5.PNG"],
     detailsUrl: "./TalesGame.html"
   },
   {
@@ -46,7 +46,7 @@ export const projectsData = [
     fullDesc: "Developed to streamline clinical administration, this application manages patient medical histories, prescription tracking, appointment scheduling, and role-based data privacy using a relational MySQL backend paired with a custom VB.NET desktop interface.",
     tech: ["MySQL", "Visual Basic", "Form.vb", "Relational DB", "Role Auth"],
     image: "/logn.PNG",
-    gallery: ["/logn.PNG", "/appoint.PNG", "/patients.PNG", "/staff.PNG"],
+    gallery: ["/logn.PNG", "/home.PNG", "/appoint.PNG", "/patients.PNG", "/staff.PNG", "/historry.PNG"],
     detailsUrl: "./clinicdbo.html"
   },
   {
@@ -59,7 +59,7 @@ export const projectsData = [
     fullDesc: "This project explores modern application security standards, inventory transaction locks, cloud-readiness, and front-end interface optimization. It includes product administration, customer cart management, checkout security checks, and detailed sales reports.",
     tech: ["MySQL", "Visual Basic", "JavaScript", "HTML/CSS", "App Security"],
     image: "/LTAB.PNG",
-    gallery: ["/LTAB.PNG", "/store.PNG", "/apply.PNG", "/advise.PNG"],
+    gallery: ["/LTAB.PNG"],
     detailsUrl: "./E-commerce.html"
   },
   {
