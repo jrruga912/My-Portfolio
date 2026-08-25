@@ -7,7 +7,7 @@ export const roles = [
 
 export const CONTACT_EMAIL = 'jrruga912@gmail.com'
 export const LINKEDIN_URL = 'https://www.linkedin.com/in/john-roman-ruga-6265b93b3/'
-export const GITHUB_URL = 'https://github.com/Demented912'
+export const GITHUB_URL = 'https://github.com/jrruga912'
 
 export const projectsData = [
   {

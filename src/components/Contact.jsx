@@ -113,7 +113,7 @@ export function Contact() {
                 </div>
                 <div className="contact-box-info">
                   <span className="contact-label">GitHub</span>
-                  <span className="contact-value">Demented912</span>
+                  <span className="contact-value">jrruga912</span>
                 </div>
               </div>
               <div className="contact-action-badge">
