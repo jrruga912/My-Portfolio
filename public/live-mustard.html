@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live Mustard Events — Figma UI Showcase</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        body { margin: 0; background: #000; color: #fff; font-family: 'Inter', sans-serif; line-height: 1.6; }
+        .page { width: 92%; max-width: 1100px; margin: 3rem auto; background: rgba(18, 18, 20, 0.88); border: 1px solid rgba(255,255,255,0.12); border-radius: 28px; padding: 3rem; }
+        h1 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 2.8rem; font-weight: 800; margin: 0.75rem 0 1.2rem; }
+        .section-heading { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.4rem; font-weight: 700; margin: 2rem 0 1rem; padding-bottom: 0.4rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        p { color: #a1a1aa; font-size: 1rem; }
+        .meta { background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); padding: 5px 14px; border-radius: 99px; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; }
+        .hero-preview { position: relative; cursor: pointer; border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,255,255,0.15); margin-bottom: 2rem; }
+        .project-image { width: 100%; max-height: 520px; object-fit: cover; display: block; }
+        .expand-hint { position: absolute; bottom: 16px; right: 16px; background: rgba(0,0,0,0.85); border: 1px solid rgba(255,255,255,0.25); padding: 8px 16px; border-radius: 99px; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1rem 0 2rem; }
+        .gallery-item { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; padding: 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; cursor: pointer; transition: all 0.25s ease; }
+        .gallery-item:hover { transform: translateY(-4px); border-color: rgba(255, 255, 255, 0.3); background: rgba(255, 255, 255, 0.06); }
+        .gallery-image { width: 100%; height: 220px; object-fit: cover; border-radius: 14px; }
+        .gallery-title { margin: 0; font-size: 1.1rem; font-family: 'Plus Jakarta Sans', sans-serif; }
+        .gallery-caption { color: #a1a1aa; font-size: 0.9rem; margin: 0; }
+        .back-link { display: inline-flex; margin-top: 2rem; padding: 0.9rem 2rem; border-radius: 99px; background: #fff; color: #000; text-decoration: none; font-weight: 700; }
+        #lightbox { display: none; position: fixed; inset: 0; z-index: 99999; background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(20px); align-items: center; justify-content: center; flex-direction: column; padding: 20px; }
+        #lightbox.active { display: flex; }
+        #lightbox-img { max-width: 92vw; max-height: 80vh; object-fit: contain; border-radius: 16px; border: 1px solid rgba(255,255,255,0.2); }
+        #lightbox-title { color: #fff; font-family: 'Plus Jakarta Sans', sans-serif; margin-top: 14px; font-size: 1.15rem; font-weight: 700; }
+        #lightbox-desc { color: #a1a1aa; font-family: 'Inter', sans-serif; font-size: 0.9rem; margin-top: 4px; }
+        .lb-btn { position: absolute; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); color: #fff; border-radius: 50%; width: 48px; height: 48px; font-size: 1.8rem; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+        .lb-btn:hover { background: #fff; color: #000; }
+        #lb-close { top: 20px; right: 24px; font-size: 1.1rem; width: auto; height: auto; border-radius: 99px; padding: 8px 18px; }
+        #lb-prev { left: 20px; top: 50%; transform: translateY(-50%); }
+        #lb-next { right: 20px; top: 50%; transform: translateY(-50%); }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <span class="meta">Figma UI/UX Design Showcase</span>
+        <h1>Live Mustard Events</h1>
+        <div class="hero-preview" onclick="openLightbox(0)">
+            <img src="/livemustard.png" alt="Live Mustard Events Figma Concept" class="project-image" />
+            <div class="expand-hint">🔍 Click image to expand full Figma mockup</div>
+        </div>
+        <p><strong>Live Mustard Events</strong> is a 15-screen web UI/UX design mockup crafted in <strong>Figma</strong> for live event management and creative production services. <strong>Click any design card below to expand in full-screen view and inspect high-resolution UI details.</strong></p>
+
+        <h2 class="section-heading">01. Hero & Landing Layouts</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item" onclick="openLightbox(1)"><img src="/home1.PNG" class="gallery-image" /><h3 class="gallery-title">Hero Landing Banner</h3><p class="gallery-caption">Main hero layout with bold event typography and calls to action.</p></div>
+            <div class="gallery-item" onclick="openLightbox(2)"><img src="/home2.PNG" class="gallery-image" /><h3 class="gallery-title">Landing Highlights & Footer</h3><p class="gallery-caption">Featured event cards and dark-mode footer layout.</p></div>
+        </div>
+
+        <h2 class="section-heading">02. Services & Solutions</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item" onclick="openLightbox(3)"><img src="/services1.PNG" class="gallery-image" /><h3 class="gallery-title">Services Overview Grid</h3><p class="gallery-caption">Event production capabilities, stage design, and AV setups.</p></div>
+            <div class="gallery-item" onclick="openLightbox(4)"><img src="/services2.PNG" class="gallery-image" /><h3 class="gallery-title">Service Details Layout</h3><p class="gallery-caption">Breakdown outlining individual packages and equipment specs.</p></div>
+            <div class="gallery-item" onclick="openLightbox(5)"><img src="/services3.PNG" class="gallery-image" /><h3 class="gallery-title">Custom Solutions & Features</h3><p class="gallery-caption">Options tailored for corporate, festival, and concert organizers.</p></div>
+        </div>
+
+        <h2 class="section-heading">03. Our Work & Portfolio</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item" onclick="openLightbox(6)"><img src="/Ourwork1.PNG" class="gallery-image" /><h3 class="gallery-title">Event Portfolio Grid</h3><p class="gallery-caption">Visual portfolio showcase highlighting past live concerts and stages.</p></div>
+            <div class="gallery-item" onclick="openLightbox(7)"><img src="/ourwork2.PNG" class="gallery-image" /><h3 class="gallery-title">Case Studies & Gallery View</h3><p class="gallery-caption">Case study layout with event metrics and photo gallery.</p></div>
+        </div>
+
+        <h2 class="section-heading">04. Event Packages & Pricing</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item" onclick="openLightbox(8)"><img src="/packages1.PNG" class="gallery-image" /><h3 class="gallery-title">Tiered Event Packages</h3><p class="gallery-caption">Pricing comparison for Essential, Pro, and Enterprise tiers.</p></div>
+            <div class="gallery-item" onclick="openLightbox(9)"><img src="/packages2.PNG" class="gallery-image" /><h3 class="gallery-title">Custom Quote Calculator</h3><p class="gallery-caption">Interactive pricing estimator for stage lighting and gear.</p></div>
+        </div>
+
+        <h2 class="section-heading">05. About Us & Team</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item" onclick="openLightbox(10)"><img src="/aboutus1.PNG" class="gallery-image" /><h3 class="gallery-title">Agency Story & Mission</h3><p class="gallery-caption">Brand narrative section highlighting Live Mustard's vision.</p></div>
+            <div class="gallery-item" onclick="openLightbox(11)"><img src="/aboutus2.PNG" class="gallery-image" /><h3 class="gallery-title">Production Team & Leadership</h3><p class="gallery-caption">Profiles of sound engineers and stage directors.</p></div>
+        </div>
+
+        <h2 class="section-heading">06. Blog & News Articles</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item" onclick="openLightbox(12)"><img src="/blog1.PNG" class="gallery-image" /><h3 class="gallery-title">Event Industry Blog Grid</h3><p class="gallery-caption">Magazine-style article index layout.</p></div>
+            <div class="gallery-item" onclick="openLightbox(13)"><img src="/blog2.PNG" class="gallery-image" /><h3 class="gallery-title">Blog Article Reading Layout</h3><p class="gallery-caption">Article reading experience and technical breakdowns.</p></div>
+            <div class="gallery-item" onclick="openLightbox(14)"><img src="/blog3.PNG" class="gallery-image" /><h3 class="gallery-title">Newsletter & Engagement</h3><p class="gallery-caption">Social shares, related posts, and newsletter signup box.</p></div>
+        </div>
+        <a class="back-link" href="/">← Back to Portfolio</a>
+    </div>
+    <div id="lightbox" onclick="closeLightbox()">
+        <button id="lb-close" class="lb-btn" onclick="closeLightbox()">✕ Close</button>
+        <button id="lb-prev" class="lb-btn" onclick="event.stopPropagation(); changeSlide(-1)">‹</button>
+        <img id="lightbox-img" src="" alt="Figma Screen" onclick="event.stopPropagation()" />
+        <button id="lb-next" class="lb-btn" onclick="event.stopPropagation(); changeSlide(1)">›</button>
+        <div id="lightbox-title"></div>
+        <div id="lightbox-desc"></div>
+    </div>
+
+    <script>
+        const screens = [
+            { src: "/livemustard.png", title: "Live Mustard Events — Full Figma Mockup", desc: "Complete UI/UX design overview created in Figma" },
+            { src: "/home1.PNG", title: "Hero Landing Banner", desc: "Main hero section with bold typography and calls to action" },
+            { src: "/home2.PNG", title: "Landing Highlights & Footer", desc: "Featured event cards and dark footer layout" },
+            { src: "/services1.PNG", title: "Services Overview Grid", desc: "Production capabilities, stage design, AV setups" },
+            { src: "/services2.PNG", title: "Service Details Layout", desc: "Event packages and equipment specifications" },
+            { src: "/services3.PNG", title: "Custom Solutions & Features", desc: "Tailored options for corporate, festival, and concert events" },
+            { src: "/Ourwork1.PNG", title: "Event Portfolio Grid", desc: "Visual showcase of past concerts and live events" },
+            { src: "/ourwork2.PNG", title: "Case Studies & Gallery View", desc: "In-depth event case study with metrics and photos" },
+            { src: "/packages1.PNG", title: "Tiered Event Packages", desc: "Pricing tiers for Essential, Pro, and Enterprise packages" },
+            { src: "/packages2.PNG", title: "Custom Quote Calculator", desc: "Interactive pricing estimator layout" },
+            { src: "/aboutus1.PNG", title: "Agency Story & Mission", desc: "Brand vision and production background" },
+            { src: "/aboutus2.PNG", title: "Production Team & Leadership", desc: "Profiles of sound engineers and creative directors" },
+            { src: "/blog1.PNG", title: "Event Industry Blog Grid", desc: "Magazine-style article index layout" },
+            { src: "/blog2.PNG", title: "Blog Article Reading Layout", desc: "Article typography and technical reading view" },
+            { src: "/blog3.PNG", title: "Newsletter & Article Engagement", desc: "Social shares, related posts, and newsletter signup" }
+        ];
+        let currentIndex = 0;
+        function openLightbox(idx) { currentIndex = idx; updateLightbox(); document.getElementById('lightbox').classList.add('active'); }
+        function closeLightbox() { document.getElementById('lightbox').classList.remove('active'); }
+        function changeSlide(dir) { currentIndex = (currentIndex + dir + screens.length) % screens.length; updateLightbox(); }
+        function updateLightbox() {
+            const item = screens[currentIndex];
+            document.getElementById('lightbox-img').src = item.src;
+            document.getElementById('lightbox-title').innerText = `(${currentIndex + 1}/${screens.length}) ${item.title}`;
+            document.getElementById('lightbox-desc').innerText = item.desc;
+        }
+        document.addEventListener('keydown', (e) => {
+            if (!document.getElementById('lightbox').classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') changeSlide(-1);
+            if (e.key === 'ArrowRight') changeSlide(1);
+        });
+    </script>
+</body>
+</html>

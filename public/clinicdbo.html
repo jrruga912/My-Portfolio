@@ -4,26 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Clinic Database Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
     <style>
         /* Base Styles */
         body {
             margin: 0;
             padding: 0;
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            background: #050505;
-            color: #f4f4f4;
+            background-color: #000000;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            color: #ffffff;
             line-height: 1.6;
-        }
-
-        /* Background Video Fix */
-        .background-video {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1; /* Set to -1 to ensure it stays back */
+            min-height: 100vh;
         }
 
         /* Main Page Container */
@@ -31,37 +26,46 @@
             position: relative;
             z-index: 1;
             width: 90%;
-            max-width: 900px;
-            margin: 4rem auto; /* Centers the container and adds top/bottom spacing */
-            background: rgba(10, 10, 10, 0.92);
-            backdrop-filter: blur(12px); /* Smooth glass effect */
-            border: 1px solid rgba(0, 240, 208, 0.18);
-            box-shadow: 0 0 40px rgba(0, 240, 208, 0.15);
-            border-radius: 24px;
+            max-width: 920px;
+            margin: 4rem auto;
+            background: rgba(18, 18, 20, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.9);
+            border-radius: 28px;
             padding: 3rem;
         }
 
         /* Typography */
         h1 {
-            margin: 0.5rem 0 1.5rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            margin: 0.75rem 0 1.5rem;
             font-size: 2.8rem;
             font-weight: 800;
             letter-spacing: -0.02em;
+            color: #ffffff;
         }
 
         p {
             line-height: 1.8;
-            color: #d0d0d0;
+            color: #a1a1aa;
             margin-bottom: 1.5rem;
+            font-size: 1.025rem;
         }
 
         .meta {
-            color: #00f0d0;
-            letter-spacing: 0.2em;
-            font-size: 0.85rem;
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 5px 14px;
+            border-radius: 99px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
             font-weight: 700;
             text-transform: uppercase;
-            display: block;
+            letter-spacing: 0.15em;
+            display: inline-block;
         }
 
         /* Large Project Image */
@@ -71,7 +75,7 @@
             max-height: 480px;
             object-fit: cover;
             border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.12);
             margin-bottom: 2rem;
         }
 
@@ -86,24 +90,26 @@
         .gallery-item {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 18px;
+            border-radius: 20px;
             padding: 1.25rem;
             display: flex;
             flex-direction: column;
             gap: 1rem;
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .gallery-item:hover {
             transform: translateY(-5px);
-            border-color: rgba(0, 240, 208, 0.3);
+            border-color: rgba(255, 255, 255, 0.25);
+            background: rgba(255, 255, 255, 0.05);
         }
 
         .gallery-image {
             width: 100%;
             height: 200px;
             object-fit: cover;
-            border-radius: 12px;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .gallery-title {
@@ -111,32 +117,38 @@
             font-size: 1.2rem;
             color: #ffffff;
             font-weight: 700;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
         .gallery-caption {
-            color: #b0b0b0;
+            color: #a1a1aa;
             font-size: 0.95rem;
             margin: 0;
+            line-height: 1.6;
         }
 
         /* Navigation Link */
         .back-link {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             margin-top: 2rem;
-            padding: 0.8rem 1.8rem;
-            border-radius: 999px;
-            background: rgba(0, 240, 208, 0.1);
-            color: #00f0d0;
+            padding: 0.9rem 2rem;
+            border-radius: 99px;
+            background: #ffffff;
+            color: #000000;
             text-decoration: none;
-            font-weight: 600;
-            border: 1px solid rgba(0, 240, 208, 0.3);
+            font-weight: 700;
+            font-size: 0.95rem;
+            border: none;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.18);
         }
 
         .back-link:hover {
-            background: #00f0d0;
-            color: #000;
-            box-shadow: 0 0 20px rgba(0, 240, 208, 0.4);
+            background: #e4e4e7;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.25);
         }
 
         /* Responsive Tweaks */
@@ -148,10 +160,6 @@
     </style>
 </head>
 <body>
-
-    <video class="background-video" autoplay loop muted playsinline>
-        <source src="/bgretro.mp4" type="video/mp4" />
-    </video>
 
     <div class="page">
         <span class="meta">Database Project</span>
